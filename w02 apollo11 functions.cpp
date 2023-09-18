@@ -1,6 +1,6 @@
 /*************************************************************
  * 1. Name:
- *      team 7
+ *      team 7 Daniel & Cayden
  * 2. Assignment Name:
  *      Practice 02: Physics simulator
  * 3. Assignment Description:
@@ -32,6 +32,10 @@ using namespace std;
  *     s : new position, in meters
  **************************************************/
  // your function goes here
+double computeDistance(double s, double v, double a, double t) {
+    s = s + (v * t) + (0.5 * a * (t * t));
+    return s;
+}
 
  /**************************************************
   * COMPUTE ACCELERATION
