@@ -49,6 +49,10 @@ double computeDistance(double s, double v, double a, double t) {
   *     a : acceleration, in meters/second^2
   ***************************************************/
   // your function goes here
+double computeAcceleration(double f, double m) {
+    double a = f / m;
+    return a;
+}
 
   /***********************************************
    * COMPUTE VELOCITY
