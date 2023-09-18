@@ -144,7 +144,12 @@ using namespace std;
         * OUTPUT
         *      response : the user's response
         ***************************************************/
-        // your function goes here
+double prompt(string promptOutput) {
+    double promptInput;
+    cout << promptOutput << endl;
+    cin >> promptInput;
+    return promptInput;
+        }
 
         /****************************************************************
          * MAIN
