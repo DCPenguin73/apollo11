@@ -145,7 +145,11 @@ double computeHorizontal(double a, double total) {
       * OUTPUT
       *    total : total component
       ***********************************************/
-      // your function goes here
+double computeTotal(double x, double y) {
+    double total;
+    total = sqrt(x * x + y * y);
+        return total;
+      }
 
 
       /*************************************************
@@ -157,10 +161,10 @@ double computeHorizontal(double a, double total) {
        * OUTPUT
        *     r : radians from 0 to 2pi
        **************************************************/
-double degreesToRadians(double degrees) {
-    double radians;
-    radians = (PI * degrees) / 180;
-    return radians;
+double degreesToRadians(double d) {
+    double r;
+    r = (PI * d) / 180;
+    return r;
 }
 
        /**************************************************
@@ -171,11 +175,11 @@ double degreesToRadians(double degrees) {
         * OUTPUT
         *      response : the user's response
         ***************************************************/
-double prompt(string promptOutput) {
-    double promptInput;
-    cout << promptOutput << endl;
-    cin >> promptInput;
-    return promptInput;
+double prompt(string message) {
+    double response;
+    cout << message << endl;
+    cin >> response;
+    return response;
         }
 
         /****************************************************************
@@ -208,6 +212,7 @@ int main()
     cout << "\tNew position:   (" << x << ", " << y << ")m\n";
     cout << "\tNew velocity:   (" << dx << ", " << dy << ")m/s\n";
     cout << "\tTotal velocity:  " << v << "m/s\n\n";
+    cout << computeTotal(x, y);
 
     return 0;
 }
