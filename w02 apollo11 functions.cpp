@@ -11,6 +11,7 @@
  *      -total time in hours: reading the assignment, submitting, etc.
  **************************************************************/
 
+#include <cmath>
 #include <iostream>  // for CIN and COUT
 using namespace std;
 
@@ -33,8 +34,8 @@ using namespace std;
  **************************************************/
  // your function goes here
 double computeDistance(double s, double v, double a, double t) {
-    s = s + (v * t) + (0.5 * a * (t * t));
-    return s;
+    double s2 = s + (v * t) + (0.5 * a * (t * t));
+    return s2;
 }
 
  /**************************************************
@@ -70,8 +71,8 @@ double computeAcceleration(double f, double m) {
    ***********************************************/
    // your function goes here
 double computeVelocity(double v, double a, double t) {
-    double v = v + (a * t);
-    return v;
+    double v2 = v + (a * t);
+    return v2;
 }
 
 
@@ -184,23 +185,23 @@ int main()
     double x = prompt("What is your position (m)? ");
     double aDegrees = prompt("What is the angle of the LM where 0 is up (degrees)? ");
     double t = prompt("What is the time interval (s)? ");
-    double aRadians;            // Angle in radians
-    double accelerationThrust;  // Acceleration due to thrust 
-    double ddxThrust;           // Horizontal acceleration due to thrust
-    double ddyThrust;           // Vertical acceleration due to thrust
-    double ddx;                 // Total horizontal acceleration
-    double ddy;                 // Total vertical acceleration
-    double v;                   // Total velocity
+    //double aRadians;            // Angle in radians
+    //double accelerationThrust;  // Acceleration due to thrust 
+    //double ddxThrust;           // Horizontal acceleration due to thrust
+    //double ddyThrust;           // Vertical acceleration due to thrust
+    //double ddx;                 // Total horizontal acceleration
+    //double ddy;                 // Total vertical acceleration
+    //double v;                   // Total velocity
 
-    // Go through the simulator five times
-      // your code goes here
+    //// Go through the simulator five times
+    //  // your code goes here
 
-      // Output
-    cout.setf(ios::fixed | ios::showpoint);
-    cout.precision(2);
-    cout << "\tNew position:   (" << x << ", " << y << ")m\n";
-    cout << "\tNew velocity:   (" << dx << ", " << dy << ")m/s\n";
-    cout << "\tTotal velocity:  " << v << "m/s\n\n";
+    //  // Output
+    //cout.setf(ios::fixed | ios::showpoint);
+    //cout.precision(2);
+    //cout << "\tNew position:   (" << x << ", " << y << ")m\n";
+    //cout << "\tNew velocity:   (" << dx << ", " << dy << ")m/s\n";
+    //cout << "\tTotal velocity:  " << v << "m/s\n\n";
 
 
     return 0;
