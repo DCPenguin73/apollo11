@@ -11,12 +11,16 @@
  *      -total time in hours: reading the assignment, submitting, etc.
  **************************************************************/
 
+
 #include <iostream>  // for CIN and COUT
+#include <cmath>
 using namespace std;
 
 #define WEIGHT   15103.000   // Weight in KG
 #define GRAVITY     -1.625   // Vertical acceleration due to gravity, in m/s^2
+
 #define THRUST   45000.000   // Thrust of main engine, in Newtons (kg m/s^2)
+double PI = (2 * acos(0.0));
 
 /***************************************************
  * COMPUTE DISTANCE
@@ -33,8 +37,8 @@ using namespace std;
  **************************************************/
  // your function goes here
 double computeDistance(double s, double v, double a, double t) {
-    s = s + (v * t) + (0.5 * a * (t * t));
-    return s;
+    double s2 = s + (v * t) + (0.5 * a * (t * t));
+    return s2;
 }
 
  /**************************************************
@@ -69,6 +73,10 @@ double computeAcceleration(double f, double m) {
    *     v : new velocity, in meters/second
    ***********************************************/
    // your function goes here
+double computeVelocity(double v, double a, double t) {
+    double v2 = v + (a * t);
+    return v2;
+}
 
 
    /***********************************************
@@ -90,6 +98,10 @@ double computeAcceleration(double f, double m) {
     *     y : the vertical component of the total
     ***********************************************/
     // your function goes here
+double computeVertical(double a, double total) {
+    double y = cos(a) * total;
+    return y;
+}
 
     /***********************************************
      * COMPUTE HORIZONTAL COMPONENT
@@ -110,6 +122,10 @@ double computeAcceleration(double f, double m) {
      *     x : the vertical component of the total
      ***********************************************/
      // your function goes here
+double computeHorizontal(double a, double total) {
+    double x = sin(a) * total;
+    return x;
+}
 
      /************************************************
       * COMPUTE TOTAL COMPONENT
@@ -130,7 +146,11 @@ double computeAcceleration(double f, double m) {
       * OUTPUT
       *    total : total component
       ***********************************************/
-      // your function goes here
+double computeTotal(double x, double y) {
+    double total;
+    total = sqrt(x * x + y * y);
+        return total;
+      }
 
 
       /*************************************************
@@ -142,7 +162,11 @@ double computeAcceleration(double f, double m) {
        * OUTPUT
        *     r : radians from 0 to 2pi
        **************************************************/
-       // your function goes here
+double degreesToRadians(double d) {
+    double r;
+    r = (PI * d) / 180;
+    return r;
+}
 
        /**************************************************
         * PROMPT
@@ -152,11 +176,11 @@ double computeAcceleration(double f, double m) {
         * OUTPUT
         *      response : the user's response
         ***************************************************/
-double prompt(string promptOutput) {
-    double promptInput;
-    cout << promptOutput << endl;
-    cin >> promptInput;
-    return promptInput;
+double prompt(string message) {
+    double response;
+    cout << message << endl;
+    cin >> response;
+    return response;
         }
 
         /****************************************************************
@@ -172,7 +196,7 @@ int main()
     double x = prompt("What is your position (m)? ");
     double aDegrees = prompt("What is the angle of the LM where 0 is up (degrees)? ");
     double t = prompt("What is the time interval (s)? ");
-    double aRadians;            // Angle in radians
+    double aRadians = degreesToRadians(aDegrees);            // Angle in radians
     double accelerationThrust;  // Acceleration due to thrust 
     double ddxThrust;           // Horizontal acceleration due to thrust
     double ddyThrust;           // Vertical acceleration due to thrust
@@ -189,7 +213,7 @@ int main()
     cout << "\tNew position:   (" << x << ", " << y << ")m\n";
     cout << "\tNew velocity:   (" << dx << ", " << dy << ")m/s\n";
     cout << "\tTotal velocity:  " << v << "m/s\n\n";
-
+    cout << computeTotal(x, y);
 
     return 0;
 }
