@@ -192,15 +192,6 @@ int main()
     double x = prompt("What is your position (m)? ");
     double aDegrees = prompt("What is the angle of the LM where 0 is up (degrees)? ");
     double t = prompt("What is the time interval (s)? ");
-<<<<<<< HEAD
-    //double aRadians;            // Angle in radians
-    //double accelerationThrust;  // Acceleration due to thrust 
-    //double ddxThrust;           // Horizontal acceleration due to thrust
-    //double ddyThrust;           // Vertical acceleration due to thrust
-    //double ddx;                 // Total horizontal acceleration
-    //double ddy;                 // Total vertical acceleration
-    //double v;                   // Total velocity
-=======
     double aRadians = degreesToRadians(aDegrees);            // Angle in radians
     double accelerationThrust;  // Acceleration due to thrust 
     double ddxThrust;           // Horizontal acceleration due to thrust
@@ -212,13 +203,6 @@ int main()
 
     //// Go through the simulator five times
     //  // your code goes here
-
-    //  // Output
-    //cout.setf(ios::fixed | ios::showpoint);
-    //cout.precision(2);
-    //cout << "\tNew position:   (" << x << ", " << y << ")m\n";
-    //cout << "\tNew velocity:   (" << dx << ", " << dy << ")m/s\n";
-    //cout << "\tTotal velocity:  " << v << "m/s\n\n";
 
     return 0;
 }
