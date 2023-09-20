@@ -11,6 +11,7 @@
  *      -total time in hours: reading the assignment, submitting, etc.
  **************************************************************/
 
+
 #include <iostream>  // for CIN and COUT
 #include <cmath>
 using namespace std;
@@ -36,8 +37,8 @@ double PI = (2 * acos(0.0));
  **************************************************/
  // your function goes here
 double computeDistance(double s, double v, double a, double t) {
-    s = s + (v * t) + (0.5 * a * (t * t));
-    return s;
+    double s2 = s + (v * t) + (0.5 * a * (t * t));
+    return s2;
 }
 
  /**************************************************
@@ -73,8 +74,8 @@ double computeAcceleration(double f, double m) {
    ***********************************************/
    // your function goes here
 double computeVelocity(double v, double a, double t) {
-    double v = v + (a * t);
-    return v;
+    double v2 = v + (a * t);
+    return v2;
 }
 
 
@@ -202,6 +203,7 @@ int main()
     double ddx;                 // Total horizontal acceleration
     double ddy;                 // Total vertical acceleration
     double v;                   // Total velocity
+>>>>>>> 448f6f2ddd978e3d612887e6e25c37fa8eb93fa5
 
     // Go through the simulator five times
       // your code goes here
