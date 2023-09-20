@@ -203,7 +203,6 @@ int main()
     double ddx;                 // Total horizontal acceleration
     double ddy;                 // Total vertical acceleration
     double v;                   // Total velocity
->>>>>>> 448f6f2ddd978e3d612887e6e25c37fa8eb93fa5
 
     // Go through the simulator five times
       // your code goes here
