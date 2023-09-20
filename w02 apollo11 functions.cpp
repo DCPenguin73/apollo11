@@ -72,6 +72,10 @@ double computeAcceleration(double f, double m) {
    *     v : new velocity, in meters/second
    ***********************************************/
    // your function goes here
+double computeVelocity(double v, double a, double t) {
+    double v = v + (a * t);
+    return v;
+}
 
 
    /***********************************************
@@ -93,6 +97,10 @@ double computeAcceleration(double f, double m) {
     *     y : the vertical component of the total
     ***********************************************/
     // your function goes here
+double computeVertical(double a, double total) {
+    double y = cos(a) * total;
+    return y;
+}
 
     /***********************************************
      * COMPUTE HORIZONTAL COMPONENT
@@ -113,6 +121,10 @@ double computeAcceleration(double f, double m) {
      *     x : the vertical component of the total
      ***********************************************/
      // your function goes here
+double computeHorizontal(double a, double total) {
+    double x = sin(a) * total;
+    return x;
+}
 
      /************************************************
       * COMPUTE TOTAL COMPONENT
