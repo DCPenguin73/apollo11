@@ -11,13 +11,16 @@
  *      -total time in hours: reading the assignment, submitting, etc.
  **************************************************************/
 
-#include <cmath>
+
 #include <iostream>  // for CIN and COUT
+#include <cmath>
 using namespace std;
 
 #define WEIGHT   15103.000   // Weight in KG
 #define GRAVITY     -1.625   // Vertical acceleration due to gravity, in m/s^2
+
 #define THRUST   45000.000   // Thrust of main engine, in Newtons (kg m/s^2)
+double PI = (2 * acos(0.0));
 
 /***************************************************
  * COMPUTE DISTANCE
@@ -155,7 +158,11 @@ double computeHorizontal(double a, double total) {
        * OUTPUT
        *     r : radians from 0 to 2pi
        **************************************************/
-       // your function goes here
+double degreesToRadians(double degrees) {
+    double radians;
+    radians = (PI * degrees) / 180;
+    return radians;
+}
 
        /**************************************************
         * PROMPT
@@ -185,6 +192,7 @@ int main()
     double x = prompt("What is your position (m)? ");
     double aDegrees = prompt("What is the angle of the LM where 0 is up (degrees)? ");
     double t = prompt("What is the time interval (s)? ");
+<<<<<<< HEAD
     //double aRadians;            // Angle in radians
     //double accelerationThrust;  // Acceleration due to thrust 
     //double ddxThrust;           // Horizontal acceleration due to thrust
@@ -192,6 +200,15 @@ int main()
     //double ddx;                 // Total horizontal acceleration
     //double ddy;                 // Total vertical acceleration
     //double v;                   // Total velocity
+=======
+    double aRadians = degreesToRadians(aDegrees);            // Angle in radians
+    double accelerationThrust;  // Acceleration due to thrust 
+    double ddxThrust;           // Horizontal acceleration due to thrust
+    double ddyThrust;           // Vertical acceleration due to thrust
+    double ddx;                 // Total horizontal acceleration
+    double ddy;                 // Total vertical acceleration
+    double v;                   // Total velocity
+>>>>>>> 448f6f2ddd978e3d612887e6e25c37fa8eb93fa5
 
     //// Go through the simulator five times
     //  // your code goes here
@@ -202,7 +219,6 @@ int main()
     //cout << "\tNew position:   (" << x << ", " << y << ")m\n";
     //cout << "\tNew velocity:   (" << dx << ", " << dy << ")m/s\n";
     //cout << "\tTotal velocity:  " << v << "m/s\n\n";
-
 
     return 0;
 }
