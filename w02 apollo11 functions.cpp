@@ -197,15 +197,28 @@ int main()
     double aDegrees = prompt("What is the angle of the LM where 0 is up (degrees)? ");
     double t = prompt("What is the time interval (s)? ");
     double aRadians = degreesToRadians(aDegrees);            // Angle in radians
-    double accelerationThrust;  // Acceleration due to thrust 
-    double ddxThrust;           // Horizontal acceleration due to thrust
-    double ddyThrust;           // Vertical acceleration due to thrust
-    double ddx;                 // Total horizontal acceleration
-    double ddy;                 // Total vertical acceleration
-    double v;                   // Total velocity
+    double accelerationThrust = computeAcceleration(THRUST, WEIGHT);  // Acceleration due to thrust 
+    double ddxThrust = computeHorizontal(aRadians, accelerationThrust);           // Horizontal acceleration due to thrust
+    double ddyThrust = computeVertical(aRadians, accelerationThrust);           // Vertical acceleration due to thrust
+    double ddx = ddxThrust;             // Total horizontal acceleration
+    double ddy = ddyThrust + GRAVITY;             // Total vertical acceleration
+    double v = computeTotal(dx, dy); 
 
+
+    dx = computeVelocity(dx, ddx, t);
+    dy = computeVelocity(dy, ddy, t);
+    v = computeTotal(dx, dy);
+    x = computeDistance(x, dx, ddx, t);
+    y = computeDistance(y, dy, ddy, t);
+
+
+    // Total velocity
     // Go through the simulator five times
-      // your code goes here
+      // We need to change x, y, dx, and dy here somehow... maybe ddxThrust and ddyThrust?
+      // Currently the velocity is right, but the other parts need to change. Do we need to move where the gravity is added?
+      // How are we using calculate distance?
+    
+    
 
       // Output
     cout.setf(ios::fixed | ios::showpoint);
