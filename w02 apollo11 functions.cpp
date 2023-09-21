@@ -204,29 +204,21 @@ int main()
     double ddy = ddyThrust + GRAVITY;             // Total vertical acceleration
     double v = computeTotal(dx, dy); 
 
-
-    dx = computeVelocity(dx, ddx, t);
-    dy = computeVelocity(dy, ddy, t);
-    v = computeTotal(dx, dy);
-    x = computeDistance(x, dx, ddx, t);
-    y = computeDistance(y, dy, ddy, t);
-
-
-    // Total velocity
     // Go through the simulator five times
-      // We need to change x, y, dx, and dy here somehow... maybe ddxThrust and ddyThrust?
-      // Currently the velocity is right, but the other parts need to change. Do we need to move where the gravity is added?
-      // How are we using calculate distance?
-    
-    
+    for (int i = 0; i < 5; i++) {
+        dx = computeVelocity(dx, ddx, t);
+        dy = computeVelocity(dy, ddy, t);
+        v = computeTotal(dx, dy);
+        x = computeDistance(x, dx, ddx, t);
+        y = computeDistance(y, dy, ddy, t);
+        // Output
+        cout.setf(ios::fixed | ios::showpoint);
+        cout.precision(2);
+        cout << "\tNew position:   (" << x << ", " << y << ")m\n";
+        cout << "\tNew velocity:   (" << dx << ", " << dy << ")m/s\n";
+        cout << "\tTotal velocity:  " << v << "m/s\n\n";
 
-      // Output
-    cout.setf(ios::fixed | ios::showpoint);
-    cout.precision(2);
-    cout << "\tNew position:   (" << x << ", " << y << ")m\n";
-    cout << "\tNew velocity:   (" << dx << ", " << dy << ")m/s\n";
-    cout << "\tTotal velocity:  " << v << "m/s\n\n";
-    cout << computeTotal(x, y);
-
+    }
+     
     return 0;
 }
