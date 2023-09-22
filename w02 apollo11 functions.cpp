@@ -204,27 +204,33 @@ int main()
     double ddx = ddxThrust;             // Total horizontal acceleration
     double ddy = ddyThrust + GRAVITY;             // Total vertical acceleration
     double v = computeTotal(dx, dy); 
-
+    int count = 0;
     // Go through the simulator five times
-    for (int i = 0; i < 5; i++) {
-        //t++;
-        dx = computeVelocity(dx, ddx, t);
-        dy = computeVelocity(dy, ddy, t);
-        v = computeTotal(dx, dy);
-        x = computeDistance(x, dx, ddx, t);
-        y = computeDistance(y, dy, ddy, t);
-        // Output
-        cout.setf(ios::fixed | ios::showpoint);
-        cout.precision(2);
-        cout << i << "s - x,y:(" << x << ", " << y << ")m ";
-        cout << " dx,dy:(" << dx << ", " << dy << ")m/s ";
-        cout << " speed:" << v << "m/s ";
-        cout << "angle:" << aDegrees << "deg" << endl;
-        //cout << "\tNew position:   (" << x << ", " << y << ")m\n";
-        //cout << "\tNew velocity:   (" << dx << ", " << dy << ")m/s\n";
-        //cout << "\tTotal velocity:  " << v << "m/s\n\n";
-
+    while (y > 0) {
+        cout << "For the next 5 seconds with the main engine on, the position of the lander is:" << endl;
+        for (int i = 0; i < 5; i++) {
+            count++;
+            dx = computeVelocity(dx, ddx, t);
+            dy = computeVelocity(dy, ddy, t);
+            v = computeTotal(dx, dy);
+            x = computeDistance(x, dx, ddx, t);
+            y = computeDistance(y, dy, ddy, t);
+            // Output
+            cout.setf(ios::fixed | ios::showpoint);
+            cout.precision(2);
+            cout << count << "s - x,y:(" << x << ", " << y << ")m ";
+            cout << " dx,dy:(" << dx << ", " << dy << ")m/s ";
+            cout << " speed:" << v << "m/s ";
+            cout << "angle:" << aDegrees << "deg" << endl;
+            //cout << "\tNew position:   (" << x << ", " << y << ")m\n";
+            //cout << "\tNew velocity:   (" << dx << ", " << dy << ")m/s\n";
+            //cout << "\tTotal velocity:  " << v << "m/s\n\n";
+        }
+        if (y > 0) {
+            aDegrees = prompt("What is the new angle of the LM where 0 is up (degrees)? ");
+        }
     }
-     
+    
+    
     return 0;
 }
