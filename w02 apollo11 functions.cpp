@@ -6,9 +6,10 @@
  * 3. Assignment Description:
  *      Simulate the Apollo 11 landing
  * 4. What was the hardest part? Be as specific as possible.
- *      -a paragraph or two about how the assignment went for you-
+ *      The hardest part was adding the while loop while still having a consistant time for the simulation.
+ *      We ended up making a new variable called count to handle it.
  * 5. How long did it take for you to complete the assignment?
- *      -total time in hours: reading the assignment, submitting, and writing code-
+ *      30 minutes after we finished the problems set assignment. 
  *****************************************************************/
 
 
